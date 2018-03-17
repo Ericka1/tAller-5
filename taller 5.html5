@@ -1,0 +1,37 @@
+
+
+<html>
+<head>
+<title>Taller 5</title>
+</head>
+ 
+<body>
+<p  ALIGN=CENTER >
+	Taller 5
+</p>
+
+<TABLE BORDER  ALIGN=CENTER width="600" height="100">
+	<TR>
+		<TD colspan= "4">
+		<p> <nav>
+   		 <a href="">Inicio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a> 
+   		 <a href="">Mapa &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
+		 <a href="">Estadísticas &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
+   		 <a href=""> Contactos <td>&nbsp;</td></a> 
+<a href=""> Contactos </a> 
+		</nav> </p>
+		</TD> 
+	</TR>
+	<TR>
+		<TD width="300" height="300"> MAPA   </TD> 
+		<TD>    VIDEO   </TD> 
+	</TR>
+	<TR>
+		<TD width="300" height="300"> GRAFICO   </TD> <TD>    KAMBAS   </TD> 
+	</TR>
+</TABLE>
+
+
+</body>
+ 
+</html>
