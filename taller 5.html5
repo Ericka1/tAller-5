@@ -59,7 +59,7 @@ height: 400px;
 		<TD colspan= "4">
 		<p> <nav>
    		 <a href="">Inicio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a> 
-   		 <a href="">Ubicación &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
+   		 <a href="">Ubicación &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
 		 <a href="">Estadísticas &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
    		 <a href="">Contactos &nbsp &nbsp &nbsp &nbsp &nbsp </a> 
 		<a href=""> Información</a> 
@@ -84,7 +84,6 @@ height: 400px;
 </body>
  
 </html>
-
 
 </body>
  
