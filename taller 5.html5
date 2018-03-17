@@ -1,35 +1,89 @@
-
-
 <html>
 <head>
+<script type="text/javascript">
+    
+  function draw(){
+        
+	var canvas = document.getElementById('tutorial');
+    
+        if (canvas.getContext){
+        
+        var ctx = canvas.getContext('2d');
+  }
+ 
+     }
+   
+ </script>
+  
+ <style type="text/css">
+  
+   canvas { border: 2px solid black; }
+
+   #map {
+height: 400px;
+     width: 100%;
+  }   
+ </style>
+
 <title>Taller 5</title>
 </head>
  
-<body>
+<body onload="draw();">
+<script>
+      
+	function initMap() {
+      
+	 var uluru = {lat: -25.363, lng: 131.044};
+       
+	 var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+    
+         var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+ 
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2KvV3MpzAswHK0LTp3lgrpubVysPLszc&libraries=places&callback=initMap">
+ 
+</script>
 <p  ALIGN=CENTER >
 	Taller 5
 </p>
-
-<TABLE BORDER  ALIGN=CENTER width="600" height="100">
+<TABLE BORDER  ALIGN=CENTER width="800" height="100">
 	<TR>
 		<TD colspan= "4">
 		<p> <nav>
    		 <a href="">Inicio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a> 
-   		 <a href="">Mapa &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
+   		 <a href="">Ubicación &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
 		 <a href="">Estadísticas &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
-   		 <a href=""> Contactos <td>&nbsp;</td></a> 
-<a href=""> Contactos </a> 
+   		 <a href="">Contactos &nbsp &nbsp &nbsp &nbsp &nbsp </a> 
+		<a href=""> Información</a> 
 		</nav> </p>
 		</TD> 
 	</TR>
 	<TR>
-		<TD width="300" height="300"> MAPA   </TD> 
-		<TD>    VIDEO   </TD> 
+		<TD id="map">
+		</TD> 
+		<TD><iframe width="400" height="200" src="https://www.youtube.com/embed/EZpNQntnXck" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  		</TD> 
 	</TR>
 	<TR>
-		<TD width="300" height="300"> GRAFICO   </TD> <TD>    KAMBAS   </TD> 
+		<TD width="400" height="300"> 
+		<img src="https://instecnogadget.files.wordpress.com/2016/05/756a5-estadistica.png?w=736"  width="280" height="180"/>
+		</TD>
+		<TD>  
+		<canvas id="tutorial" width="140" height="180"></canvas>
+		</TD> 
 	</TR>
 </TABLE>
+</body>
+ 
+</html>
 
 
 </body>
