@@ -1,108 +1,107 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script>
-   google.load("visualization", "1", {packages:["corechart"]});
-   google.setOnLoadCallback(dibujarGrafico);
-   function dibujarGrafico() {
-     // Tabla de datos: valores y etiquetas de la gráfica
-     var data = google.visualization.arrayToDataTable([
-       ['Texto', 'Valor numérico'],
-       ['Texto1', 20.21],
-       ['Texto2', 4.28],
-       ['Texto3', 17.26],
-       ['Texto4', 10.25]    
-     ]);
-      var options = {
-       title: 'Estadística'
-     }
-        new google.visualization.ColumnChart( 
-       document.getElementById('GraficoGoogleChart-ejemplo-1')
-     ).draw(data, options);
-   }
- </script>
-<script type="text/javascript">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Restaurante Sushi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
     
-  function draw(){
-        
-	var canvas = document.getElementById('tutorial');
-    
-        if (canvas.getContext){
-        
-        var ctx = canvas.getContext('2d');
-  }
- 
-     }
-   
- </script>
-  
- <style type="text/css">
-  
-   canvas { border: 2px solid black; }
-
-   #map {
-height: 400px;
-     width: 100%;
-  }   
- </style>
-
-<title>Taller 5</title>
+    <script>
+       google.load("visualization", "1", {packages:["corechart"]});
+       google.setOnLoadCallback(dibujarGrafico);
+       function dibujarGrafico() {
+         // Tabla de datos: valores y etiquetas de la grï¿½fica
+         var data = google.visualization.arrayToDataTable([
+           ['Texto', 'Valor numï¿½rico'],
+           ['Texto1', 20.21],
+           ['Texto2', 4.28],
+           ['Texto3', 17.26],
+           ['Texto4', 10.25]    
+         ]);
+          var options = {
+           title: 'Estadï¿½stica'
+         }
+            new google.visualization.ColumnChart( 
+           document.getElementById('GraficoGoogleChart-ejemplo-1')
+         ).draw(data, options);
+       }
+     </script>
 </head>
- 
 <body onload="draw();">
-<script>
-      
-	function initMap() {
-      
-	 var uluru = {lat: -25.363, lng: 131.044};
-       
-	 var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
+    <script>
+        function initMap() {
+          var uluru = {lat: -2.1750453, lng: -79.9057665};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2KvV3MpzAswHK0LTp3lgrpubVysPLszc&libraries=places&callback=initMap">
+  </script>
+       <header>
+                <div class="collapse bg-dark" id="navbarHeader">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Acerca de Nosotros</h4>
+                        <p class="text-muted">Avance del Proyecto TecnologÃ­as Web.</p>
+                      </div>
+                      <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contactos</h4>
+                        <ul class="list-unstyled">
+                          <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                          <li><a href="#" class="text-white">Like on Facebook</a></li>
+                          <li><a href="#" class="text-white">Inicia SesiÃ³n </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="navbar navbar-dark bg-dark box-shadow">
+                  <div class="container d-flex justify-content-between">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <strong>Nuestro MenÃº</strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </div>
+                </div>
+              </header>
+         <div class="container" style="margin-top:5%">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="map" style="width:100%;height:320px"></div>
+            </div>
+            <div class="col-md-6">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/eYHZ3hKXI64" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div id="GraficoGoogleChart-ejemplo-1" style="width: 400px; height: 200px"></div>
+            </div>
+            <div class="col-md-6">
+                <img src="sushi.jpg" width="400px" height="320px" />
+                
+                               
+            </div>
+          </div>
+        </div>
     
-         var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
- 
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2KvV3MpzAswHK0LTp3lgrpubVysPLszc&libraries=places&callback=initMap">
- 
-</script>
-<p  ALIGN=CENTER >
-	Taller 5
-</p>
-<TABLE BORDER  ALIGN=CENTER width="800" height="100">
-	<TR>
-		<TD colspan= "4">
-		<p> <nav>
-   		 <a href="">Inicio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a> 
-   		 <a href="">Ubicación &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
-		 <a href="">Estadísticas &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</a>
-   		 <a href="">Contactos &nbsp &nbsp &nbsp &nbsp &nbsp </a> 
-		<a href=""> Información</a> 
-		</nav> </p>
-		</TD> 
-	</TR>
-	<TR>
-		<TD id="map">
-		</TD> 
-		<TD><iframe width="400" height="200" src="https://www.youtube.com/embed/EZpNQntnXck" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  		</TD> 
-	</TR>
-	<TR>
-		<TD id="GraficoGoogleChart-ejemplo-1" style="width: 400px; height: 200px"> 
-		
-		</TD>
-		<TD>  
-		<canvas id="tutorial" width="380" height="180"></canvas>
-		</TD> 
-	</TR>
-</TABLE>
-</body> 
-</html>
-</body> 
+        
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"> </script>
+</body>
 </html>
