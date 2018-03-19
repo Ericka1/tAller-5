@@ -1,4 +1,4 @@
-
+﻿
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +23,7 @@
       <div class="container">
         
         <h1 class="h3 mb-3 font-weight-normal">Inicie Sesión</h1>
-        <label for="inputEmail" class="sr-only">Nombre de Uusario </label>
+        <label for="inputEmail" class="sr-only">Nombre de Usuario </label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
         <label for="inputPassword" class="sr-only">Contraseña</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
