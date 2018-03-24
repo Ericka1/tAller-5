@@ -49,6 +49,55 @@
       
     </div>
 
+       <section id="empresa">
+      <div class="contenido-section">
+        <div class="container">
+          <h2> Acerca de Sushi</h2>
+          <p class="lead">El mejor sushi del Ecuador, lo pude encontrar en Shushi Go</p>
+          <div class="row">
+            <div class="col-sm-12">
+                <div class="card-group">
+                    <div class="card">
+                     <div class="card-body">
+                        <h5 class="card-title">Lo mejor en Suhi</h5>
+                        <h6 class="card-subtitle">La mejor comida japonesa en Ecuador</h6>
+                   </div>
+                   <img class="card-img-top" src="img/4016289-chopsticks-and-bowl.jpg" alt="Card image cap">
+                   <div class="card-body">
+                    <p class="card-text">Nos identificamos por tener la mejor comida japondesa de nuestro pais</p>
+                   <button class= "btn btn-primary" data-toggle="modal" data-target="#myModal">Ver mas</button>
+                   </div>
+                  </div>
+                  <div class="card">
+                      <div class="card-body">
+                         <h5 class="card-title">Lo mejor en Suhi</h5>
+                         <h6 class="card-subtitle">La mejor comida japonesa en Ecuador</h6>
+                    </div>
+                    <img class="card-img-top" src="img/28530468-seafood.jpg" alt="Card image cap">
+                    <div class="card-body">
+                     <p class="card-text">Nos identificamos por tener la mejor comida japondesa de nuestro pais</p>
+                    <button class= "btn btn-primary" data-toggle="modal" data-target="#myModal">Ver mas</button>
+                    </div>
+                   </div>
+                   <div class="card">
+                      <div class="card-body">
+                         <h5 class="card-title">Lo mejor en Suhi</h5>
+                         <h6 class="card-subtitle">La mejor comida japonesa en Ecuador</h6>
+                    </div>
+                    <img class="card-img-top" src="img/sushi-1615419.jpg" alt="Card image cap">
+                    <div class="card-body">
+                     <p class="card-text">Nos identificamos por tener la mejor comida japondesa de nuestro pais</p>
+                    <button class= "btn btn-primary" data-toggle="modal" data-target="#myModal">Ver mas</button>
+                    </div>
+                   </div>   
+                    
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
