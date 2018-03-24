@@ -57,11 +57,8 @@
                <div class="col-sm-6" >
               <iframe width="500" height="315" src="https://www.youtube.com/embed/eYHZ3hKXI64" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-<<<<<<< HEAD
             <div  class="col-sm-6">
               <img id="imagen" width="420px" height="315px" />
-=======
->>>>>>> 8c3d5cf6d399084cff72a33f90c1a3251934face
             </div>
         
           <div class="row">
