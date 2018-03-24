@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-    <title>Product example for Bootstrap</title>
+    <title>Pagina Gerencial</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
     <link href="css/homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -50,14 +50,14 @@
        function dibujarGrafico() {
          // Tabla de datos: valores y etiquetas de la gr�fica
          var data = google.visualization.arrayToDataTable([
-           ['Texto', 'Valor num�rico'],
-           ['Texto1', 20.21],
-           ['Texto2', 4.28],
-           ['Texto3', 17.26],
-           ['Texto4', 10.25]    
+           ['Ventas', 'Ventas'],
+           ['Sucursal1', 20.21],
+           ['Sucursal2', 4.28],
+           ['Sucursal3', 17.26],
+           ['Sucursal4', 10.25]    
          ]);
           var options = {
-           title: 'Estad�stica'
+           title: 'Estadística'
          }
             new google.visualization.ColumnChart( 
            document.getElementById('GraficoGoogleChart-ejemplo-1')
@@ -80,21 +80,21 @@
       </div>
     </nav>
 	<div class="container"style="margin-top:2%" >
-          <div class="row">
-            <div class="col-sm-6">
-               <div id="mapa" style="width:420px ;height:315px">
-                </div>
+          <div class="row" >
+            <div class="col-sm-6" >
+               <div id="mapa" style="width:500px ;height:315px">                </div>
+               </div>
+               <div class="col-sm-6" >
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/eYHZ3hKXI64" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-            <div class="col-sm-6">
-              <iframe width="420" height="315" src="https://www.youtube.com/embed/eYHZ3hKXI64" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-          </div>
+        
           <div class="row">
             <div class="col-sm-6">
               <div id="GraficoGoogleChart-ejemplo-1" style="width: 420px; height: 315px"></div>
             </div>
             <div class="col-sm-6">
-                <img src="sushi.jpg" width="420px" height="315px" />                               
+                <img src="sushi.jpg" width="500px" height="315px" />                               
             </div>
           </div>
         </div>
