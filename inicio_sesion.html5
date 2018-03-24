@@ -23,18 +23,14 @@
       <img class="mb-4" src="img/sesion.jpg" alt="" width="250" height="250">
       <div class="container">
         
-        <h1 class="h3 mb-3 font-weight-normal">Inicie Sesión</h1>
+        <h1 class="h3 mb-3 font-weight-normal" style="color:cornsilk">Inicie Sesión</h1>
         <label for="inputEmail" class="sr-only">Nombre de Uusario </label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
         <label for="inputPassword" class="sr-only">Contraseña</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
       
     </div>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Recordarme 
-        </label>
-      </div>
+     <!-- <div class="checkbox mb-3"> <label> <input type="checkbox" value="remember-me"> Recordarme </label> </div>-->
       <button class="btn btn-lg btn-primary btn-block" type="submit" onclick= "location='taller 5.html5'" >Iniciar Sesión</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
     </form>
