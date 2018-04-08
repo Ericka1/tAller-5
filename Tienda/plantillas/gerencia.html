@@ -1,0 +1,407 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Pagina Gerencial</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mapa.js' %}"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+  </head>
+
+  <body onload="draw();">
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+        </a>
+        {% if user.is_authenticated %}
+          <a class="py-2 d-none d-md-inline-block" style="color:cornsilk">Bienvenido, {{ user.username }}.</a>
+        {% endif %}
+         <a class="py-2 d-none d-md-inline-block" href="logout">Cerrar Sesión</a>
+      </div>
+    </nav>
+	<div class="container"style="margin-top:2%" >
+          <div class="row" >
+            <div class="col-sm-6" >
+            <div id="mapa" style="width:480px ;height:315px">
+              
+              </div>
+            </div>
+            <div  class="col-sm-6">
+              <iframe id="video" width="480px" height="315px" src="https://www.youtube.com/embed/UWOoTdT5D8U"  allowfullscreen></iframe>
+            </div>
+                
+          <div class="row">
+            <div class="col-sm-6">
+              <script src="https://code.highcharts.com/highcharts.js"></script>
+              <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+              <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+              <div id="container" style="width:480px;height: 315px"></div>
+            
+            </div>
+            <div class="col-sm-6">
+                <div id="cont" style="width:480px;height: 315px"></div>                            
+            </div>
+          </div>
+        </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+      Highcharts.chart('cont', {
+          chart: {
+              type: 'pie',
+              options3d: {
+                  enabled: true,
+                  alpha: 45,
+                  beta: 0
+              }
+          },
+          title: {
+              text: 'Productos más vendidos'
+          },
+          tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+              pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  depth: 35,
+                  dataLabels: {
+                      enabled: true,
+                      format: '{point.name}'
+                  }
+              }
+          },
+          series: [{
+              type: 'pie',
+              name: 'Productos Vendidos',
+              data: [
+                  ['Arcoiris', {{producto1}}],
+                  ['CR Aburiyaki salon roll', {{producto2}}],
+                  {
+                      name: 'CR Cevichado roli',
+                      y: {{producto3}},
+                      sliced: true,
+                      selected: true
+                  },
+                  ['CR Kani', {{producto4}}],
+                  ['CR Tempura', {{producto5}}],
+                  ['Gaseosa Personal', {{producto6}}],
+                  ['Jugo Natural', {{producto7}}],
+                  ['Norimaki Unagi', {{producto8}}],
+                  ['Sake', {{producto9}}],
+                  ['Sangría Copa', {{producto10}}],
+                  ['Sushi  Tako', {{producto11}}],
+                  ['Sushi Binchomaguro', {{producto12}}],
+                  ['Sushi Ebi', {{producto13}}],
+                  ['Sushi Maguro', {{producto14}}]
+              ]
+          }]
+      });      
+
+
+
+    </script>    
+
+    <script>              
+      Highcharts.chart('container', {
+                  chart: {
+                      type: 'pie',
+                      options3d: {
+                          enabled: true,
+                          alpha: 30
+                      }
+                  },
+                  title: {
+                      text: 'Total de Ventas por establecimiento'
+                  },
+                  subtitle: {
+                      text: ''
+                  },
+                  plotOptions: {
+                      pie: {
+                          innerSize: 100,
+                          depth: 45
+                      }
+                  },
+                  series: [{
+                      name: 'Total de Ventas',
+                      data: [
+                          ['Matriz', {{ventas}}],
+                          ['Sucursal 1', {{ventas1}}],
+                          ['Sucursal 2', {{ventas2}}],
+                          ['Sucursal 3', {{ventas3}}],
+                      ]
+                  }]
+              });
+    </script> 
+
+
+    <script>
+      var marker = null;
+      function initMap() {
+        var marcadores = [
+                  ['Sushi Isao', -2.1752007, -79.90782109999998],
+                  ['Noe Sushi', -2.1751524, -79.92314199999998],
+                  ['Miyako', -2.1700195, -79.90900399999998],
+                  ['Nanosh', -2.1673177, -79.9147332]];
+                  var mapOptions = {
+                    center: new google.maps.LatLng(-2.1699498, -79.9230802),
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+                  var map = new google.maps.Map(document.getElementById("mapa"),
+                      mapOptions);
+                     var infowindow = new google.maps.InfoWindow();
+                  var marker, i;
+                  for (i = 0; i < marcadores.length; i++) {  
+                      marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(marcadores[i][1], marcadores[i][2]),
+                      map: map
+                    });
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {return function() {
+                      infowindow.setContent(marcadores[i][0]);
+                          infowindow.open(map, marker);
+                    if (marker.position.lat() == -2.1752007){
+                              var contenedor=document.getElementById("video");
+                              contenedor.src="https://www.youtube.com/embed/tGYl2h0h0E0";
+                     pinta_cuadro({{montmat1}},{{montmat2}},{{montmat3}},'Sake',{{promat11}},'CR Cevichado roli',{{promat12}},'Sushi Ebi',{{promat13}},'Sake',{{promat21}},'CR Cevichado roli',{{promat22}},'Sushi Ebi',{{promat23}},'Sake',{{promat31}},'CR Cevichado roli',{{promat32}},'CR Tempura',{{promat33}});
+
+                     pintar_cuadro_emp('Desire Hinojasa Alvarez',{{empmat1}},'Juana Arcos Mendes',{{empmat2}},'Serafin Gonzalez Torres',{{empmat3}});           
+                              
+                    }
+                    if (marker.position.lat() == -2.1751524){
+                              var contenedor=document.getElementById("video");
+                              contenedor.src="https://www.youtube.com/embed/eFoGAwTqD_4";
+                    pinta_cuadro({{montsuc11}},{{montsuc12}},{{montsuc13}},'Sake',{{prosuc111}},'CR Cevichado roli',{{prosuc112}},'Sushi Ebi',{{prosuc113}},'Sake',{{prosuc121}},'CR Cevichado roli',{{prosuc122}},'Sushi Ebi',{{prosuc123}},'Sake',{{prosuc131}},'CR Cevichado roli',{{prosuc132}},'Sushi Ebi',{{prosuc133}});
+
+                    pintar_cuadro_emp('Estefano Alaba Hurtado',{{empsuc11}},'Diomedes Castro Pino',{{empsuc12}});           
+                    }
+                    if (marker.position.lat() == -2.1700195){
+                              var contenedor=document.getElementById("video");
+                              contenedor.src="https://www.youtube.com/embed/UWOoTdT5D8U";
+                    pinta_cuadro({{montsuc21}},{{montsuc22}},{{montsuc23}},'Sake',{{prosuc211}},'CR Cevichado roli',{{prosuc212}},'Sushi Ebi',{{prosuc213}},'Sake',{{prosuc221}},'CR Cevichado roli',{{prosuc222}},'Sushi Ebi',{{prosuc223}},'Sake',{{prosuc231}},'CR Cevichado roli',{{prosuc232}},'Sushi Ebi',{{prosuc233}});
+
+                    pintar_cuadro_emp('Veronica Chang Garcia',{{empsuc21}},'Pedro Gonzalez Roby',{{empsuc22}},'Ignacio Castro Benitez',{{empsuc23}});           
+                    }
+                    if (marker.position.lat() == -2.1673177){
+                              var contenedor=document.getElementById("video");
+                              contenedor.src="https://www.youtube.com/embed/7hXlcQRLmzk";
+                    pinta_cuadro({{montsuc31}},{{montsuc32}},{{montsuc33}},'Sake',{{prosuc311}},'CR Cevichado roli',{{prosuc312}},'Sushi Ebi',{{prosuc313}},'Sake',{{prosuc321}},'CR Cevichado roli',{{prosuc322}},'Sushi Ebi',{{prosuc323}},'Sake',{{prosuc331}},'CR Cevichado roli',{{prosuc332}},'Sangría Copa',{{prosuc333}});
+
+                    pintar_cuadro_emp('Jose Constante Rios',{{empsuc31}},'Ana Silva Estrada',{{empsuc32}});           
+                    }
+                      
+                        } 
+                      })(marker, i));
+                    } 
+                 
+                  }
+    </script>    
+
+    <script>
+      function pinta_cuadro(ventas1,ventas2,ventas3,nom_prod1,prod1,nom_prod2,prod2,nom_prod3,prod3,nom_prod4,prod4,nom_prod5,prod5,nom_prod6,prod6,nom_prod7,prod7,nom_prod8,prod8,nom_prod9,prod9){
+                    Highcharts.chart('container', {
+                        chart: {
+                              type: 'column'
+                          },
+                          title: {
+                              text: 'Total de ventas por mes' 
+                          },
+                          subtitle: {
+                              text: ''
+                          },
+                          xAxis: {
+                              type: 'category'
+                          },
+                          yAxis: {
+                              title: {
+                                  text: 'Monto en ventas'
+                              }
+
+                          },
+                          legend: {
+                              enabled: false
+                          },
+                          plotOptions: {
+                              series: {
+                                  borderWidth: 0,
+                                  dataLabels: {
+                                      enabled: true,
+                                      format: '{point.y:.3f}'
+                                  }
+                              }
+                          },
+
+                          tooltip: {
+                              headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                              pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>${point.y:.3f}</b><br/>'
+                          },
+
+                          "series": [
+                              {
+                                  "name": "Mes",
+                                  "colorByPoint": true,
+                                  "data": [
+                                      {
+                                          "name": "Ene-2018",
+                                          "y": ventas1,
+                                          "drilldown": "Ene-2018"
+                                      },
+                                      {
+                                          "name": "Feb-2018",
+                                          "y": ventas2,
+                                          "drilldown": "Feb-2018"
+                                      },
+                                      {
+                                          "name": "Mar-2018",
+                                          "y": ventas3,
+                                          "drilldown": "Mar-2018"
+                                      }
+                                  ]
+                              }
+                          ],
+                          "drilldown": {
+                              "series": [
+                                  {
+                                      "name": "Ene-2018",
+                                      "id": "Ene-2018",
+                                      "data": [
+                                          [
+                                              nom_prod1,
+                                              prod1
+                                          ],
+                                          [
+                                              nom_prod2,
+                                              prod2
+                                          ],
+                                          [
+                                              nom_prod3,
+                                              prod3
+                                          ]
+                                      ]
+                                  },
+                                  {
+                                      "name": "Feb-2018",
+                                      "id": "Feb-2018",
+                                      "data": [
+                                          [
+                                              nom_prod4,
+                                              prod4
+                                          ],
+                                          [
+                                              nom_prod5,
+                                              prod5
+                                          ],
+                                          [
+                                              nom_prod6,
+                                              prod6
+                                          ]
+                                      ]
+                                  },
+                                  {
+                                      "name": "Mar-2018",
+                                      "id": "Mar-2018",
+                                      "data": [
+                                          [
+                                              nom_prod7,
+                                              prod7
+                                          ],
+                                          [
+                                              nom_prod8,
+                                              prod8
+                                          ],
+                                          [
+                                              nom_prod9,
+                                              prod9
+                                          ]
+                                      ]
+                                  }
+                              ]
+                          }
+                      });      
+
+    }
+    </script>
+
+    <script>
+    function pintar_cuadro_emp(nom_emp1,vent1,nom_emp2,vent2,nom_emp3,vent3){  
+    Highcharts.chart('cont', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Ventas por Empleado'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>${point.y:.3f}</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: 'Ventas',
+            colorByPoint: true,
+            data: [{
+                name: nom_emp1,
+                y: vent1,
+                sliced: true,
+                selected: true
+            }, {
+                name: nom_emp2,
+                y: vent2
+            }, {
+                name: nom_emp3,
+                y: vent3
+            }]
+        }]
+    });
+    }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/holder.min.js' %}"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT3_475CV9pDTRjoXvxOE3CGMparmDYlM&libraries=places&callback=initMap"
+   async defer></script>
+  </body>
+</html>
