@@ -123,38 +123,38 @@
 
     </script>    
 
-    <script>              
-      Highcharts.chart('container', {
-                  chart: {
-                      type: 'pie',
-                      options3d: {
-                          enabled: true,
-                          alpha: 30
-                      }
-                  },
-                  title: {
-                      text: 'Total de Ventas por establecimiento'
-                  },
-                  subtitle: {
-                      text: ''
-                  },
-                  plotOptions: {
-                      pie: {
-                          innerSize: 100,
-                          depth: 45
-                      }
-                  },
-                  series: [{
-                      name: 'Total de Ventas',
-                      data: [
-                          ['Matriz', {{ventas}}],
-                          ['Sucursal 1', {{ventas1}}],
-                          ['Sucursal 2', {{ventas2}}],
-                          ['Sucursal 3', {{ventas3}}],
-                      ]
-                  }]
-              });
-    </script> 
+<script>              
+    Highcharts.chart('container', {
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 30
+                    }
+                },
+                title: {
+                    text: 'Total de Ventas por establecimiento'
+                },
+                subtitle: {
+                    text: ''
+                },
+                plotOptions: {
+                    pie: {
+                        innerSize: 100,
+                        depth: 45
+                    }
+                },
+                series: [{
+                    name: 'Total de Ventas',
+                    data: [
+                        ['Matriz', {{ventas}}],
+                        ['Sucursal 1', {{ventas1}}],
+                        ['Sucursal 2', {{ventas2}}],
+                        ['Sucursal 3', {{ventas3}}],
+                    ]
+                }]
+            });
+  </script> 
 
 
     <script>
@@ -204,13 +204,7 @@
 
                     pintar_cuadro_emp('Veronica Chang Garcia',{{empsuc21}},'Pedro Gonzalez Roby',{{empsuc22}},'Ignacio Castro Benitez',{{empsuc23}});           
                     }
-                    if (marker.position.lat() == -2.1673177){
-                              var contenedor=document.getElementById("video");
-                              contenedor.src="https://www.youtube.com/embed/7hXlcQRLmzk";
-                    pinta_cuadro({{montsuc31}},{{montsuc32}},{{montsuc33}},'Sake',{{prosuc311}},'CR Cevichado roli',{{prosuc312}},'Sushi Ebi',{{prosuc313}},'Sake',{{prosuc321}},'CR Cevichado roli',{{prosuc322}},'Sushi Ebi',{{prosuc323}},'Sake',{{prosuc331}},'CR Cevichado roli',{{prosuc332}},'Sangría Copa',{{prosuc333}});
-
-                    pintar_cuadro_emp('Jose Constante Rios',{{empsuc31}},'Ana Silva Estrada',{{empsuc32}});           
-                    }
+                    
                       
                         } 
                       })(marker, i));
